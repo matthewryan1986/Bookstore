@@ -1,5 +1,13 @@
 Bookstore::Application.routes.draw do
+  resources :accounts
+
   resources :books
+  root :to=>"home#index"
+  get "sign_in" => "authentication#sign_in"
+  get "signed_out" => "authentication#signed_out"
+  get "new_user" => "authentication#new_user"
+  post "sign_in" => "authentication#login"
+  get "sign_in" => "authentication#sign_in"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
