@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1780554795">
+    <data-source source="LOCAL" name="Rails Bookstore: development" uuid="4b974955-7de9-4bc4-a799-2a772471b5d5">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Bookstore_development</jdbc-url>
+      <user-name>Bookstore</user-name>
+      <user-password>dfc7dfd3dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Bookstore: test" uuid="3a116cc3-4227-4cd7-ac30-74857a86496f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Bookstore_test</jdbc-url>
+      <user-name>Bookstore</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Bookstore: production" uuid="0d962b06-b502-439b-8ebe-d41fb63fb3a7">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Bookstore_production</jdbc-url>
+      <user-name>Bookstore</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
