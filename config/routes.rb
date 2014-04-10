@@ -1,4 +1,12 @@
 Bookstore::Application.routes.draw do
+  resources :lineitems
+
+  resources :carts
+
+  get "shop/index"
+
+  resources :orders
+
   resources :accounts
 
   resources :books
