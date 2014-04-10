@@ -10,7 +10,7 @@ Bookstore::Application.routes.draw do
   resources :accounts
 
   resources :books
-  root :to=>"home#index"
+  root :to=> "shop#index"
   get "sign_in" => "authentication#sign_in"
   get "signed_out" => "authentication#signed_out"
   get "new_user" => "authentication#new_user"

@@ -12,7 +12,20 @@
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
 
-<%= yield %>
+<div id="columns">
+  <div id = "side">
+    <div id = "cart">
+      <% if @cart %>
+        <%= render @cart %>
+      <% end %>
 
+    </div>
+  </div>
+
+    <div id = "main">
+
+    <%= yield %>
+    </div>
+</div>
 </body>
 </html>

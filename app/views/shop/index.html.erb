@@ -1,0 +1,26 @@
+<h1>Welcome to Bookstore</h1>
+
+<% if notice %>
+    <p id = "notice"><%= notice %></p>
+<% end %>
+
+<h2>Books for sale</h2>
+    <% if !@books.empty? %>
+    <% @books.each do |book|%>
+    <%= image_tag(book.picture, :size => "50x50") %>
+    <h4><%= book.title %></h4>
+    <%= number_to_euro(book.price) %>
+    <%= button_to 'Add to Cart', lineitems_path(book_id: book), remote: true %>
+    <% end %>
+
+
+<% else %>
+
+    <p>There are no books for sale currently</p>
+
+<% end %>
+
+
+
+
+

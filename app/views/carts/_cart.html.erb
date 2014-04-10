@@ -1,0 +1,18 @@
+<table>
+  <% @cart.lineitems.each do |item| %>
+  <tr>
+    <td>
+      <%= item.quantity %> &times;
+    </td>
+    <td>
+      <%= item.book.title %>
+    </td>
+    <td>
+      <%= number_to_euro(item.book.price) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?' %> <br/>
+<%= button_to "Checkout", new_orders_path, :method => :get %>
