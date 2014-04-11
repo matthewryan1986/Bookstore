@@ -5,4 +5,8 @@ class Book < ActiveRecord::Base
   has_many :orders, :through => :lineitems
 
 
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    find(:all, :conditions => ['title LIKE ? OR author LIKE ? OR category LIKE ?', search_condition, search_condition, search_condition])
+  end
 end

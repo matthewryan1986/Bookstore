@@ -16,6 +16,7 @@ class AuthenticationController < ApplicationController
     end
 
     if user
+      session[:user_id] = user.id
       flash[:notice] = 'Welcome.'
       redirect_to :root
     else
@@ -23,5 +24,27 @@ class AuthenticationController < ApplicationController
       render :action => "sign_in"
     end
 
+  end
+
+  def signed_out
+    session[:user_id] = nil
+    flash[:notice] = "You have been signed out."
+  end
+
+  def new_user
+    @user = User.new
+  end
+
+  def register
+    @user = User.new(params[:user])
+
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = 'Welcome.'
+      redirect_to :root
+    else
+      render :action => "new_user"
+    end
   end
 end

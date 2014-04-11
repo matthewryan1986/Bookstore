@@ -1,5 +1,7 @@
 <h1>Listing books</h1>
 
+
+
 <table>
   <tr>
     <th>Title</th>
@@ -29,3 +31,11 @@
 <br />
 
 <%= link_to 'New Book', new_book_path %>
+
+<% form_tag books_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search for Books", :title => nil %>
+
+    </p>
+<% end %>

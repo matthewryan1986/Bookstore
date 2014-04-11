@@ -16,6 +16,7 @@ Bookstore::Application.routes.draw do
   get "new_user" => "authentication#new_user"
   post "sign_in" => "authentication#login"
   get "sign_in" => "authentication#sign_in"
+  post "new_user" => "authentication#register"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,6 +10,16 @@ class BooksController < ApplicationController
     end
   end
 
+  def search
+    @books = Book.search_params[:search]
+    unless @books.empty?
+      render 'index'
+    else
+      flash[:notice] = 'No book matches'
+      render 'index'
+    end
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show
