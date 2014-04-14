@@ -18,7 +18,7 @@ class AuthenticationController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:notice] = 'Welcome.'
-      redirect_to :root
+      redirect_to :book
     else
       flash.now[:error] = 'Unknown user. Please check your username and password.'
       render :action => "sign_in"

@@ -1,5 +1,8 @@
+require 'singleton'
+
 class Cart < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :title, :body
+
 
   has_many :lineitems, dependent: :destroy
   def add_book(book_id)

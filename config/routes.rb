@@ -9,14 +9,12 @@ Bookstore::Application.routes.draw do
 
   resources :accounts
 
+  resources :users
+  resources :sessions
   resources :books
-  root :to=> "shop#index"
-  get "sign_in" => "authentication#sign_in"
-  get "signed_out" => "authentication#signed_out"
-  get "new_user" => "authentication#new_user"
-  post "sign_in" => "authentication#login"
-  get "sign_in" => "authentication#sign_in"
-  post "new_user" => "authentication#register"
+  match '/sign_in',  :to => 'sessions#new'
+  match '/sign_out', :to => 'sessions#destroy'
+  match '/search', :to=> 'books#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,7 +65,7 @@ Bookstore::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'books#index'
 
   # See how all your routes lay out with "rake routes"
 

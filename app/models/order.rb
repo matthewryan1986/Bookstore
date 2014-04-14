@@ -1,4 +1,7 @@
+
+
 class Order < ActiveRecord::Base
+
   attr_accessible :payment_method, :total, :user_id
 
   def add_lineitems_from_cart(cart)

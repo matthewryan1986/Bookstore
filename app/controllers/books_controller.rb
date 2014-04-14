@@ -2,21 +2,11 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.search(params[:search])
+    @books = Book.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @books }
-    end
-  end
-
-  def search
-    @books = Book.search_params[:search]
-    unless @books.empty?
-      render 'index'
-    else
-      flash[:notice] = 'No book matches'
-      render 'index'
     end
   end
 

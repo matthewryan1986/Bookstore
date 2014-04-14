@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
 
-  before_filter :authorise, :only => [:new, :create]
+  before_filter  :only => [:new, :create]
   def index
     @orders = Order.all
 
